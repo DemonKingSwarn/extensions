@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+
+.DS_Store
+.idea/
+.vscode/
+
+.env
+.env.*
+
+.vici/
+.vicinae/
+
+.raycast-swift-build/
+.swiftpm/
+compiled_raycast_swift/

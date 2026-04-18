@@ -1,0 +1,121 @@
+{
+  "$schema": "https://raw.githubusercontent.com/vicinaehq/vicinae/refs/heads/main/extra/schemas/extension.json",
+  "name": "todo-list",
+  "title": "Todo List",
+  "description": "Manage your todo list quickly by adding items and marking items as completed.",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "author": "maggie",
+  "contributors": [
+    "jkorol3",
+    "madza",
+    "pernielsentikaer",
+    "ridemountainpig",
+    "dedalusj",
+    "xmok",
+    "Hadi04",
+    "nikord"
+  ],
+  "pastContributors": [
+    "bkeys818",
+    "telmen"
+  ],
+  "scripts": {
+    "build": "vici build",
+    "dev": "vici develop",
+    "lint": "vici lint"
+  },
+  "dependencies": {
+    "@vicinae/api": "^0.16.0",
+    "chrono-node": "^2.7.8",
+    "dayjs": "^1.10.7",
+    "jotai": "^1.4.0",
+    "lodash": "^4.17.21",
+    "url-regex-safe": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.175",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/url-regex-safe": "^1.0.0",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "icon": "command-icon.png",
+  "commands": [
+    {
+      "name": "index",
+      "title": "Manage Todo List",
+      "description": "Create and delete items, mark them as completed and pin important tasks.",
+      "mode": "view"
+    },
+    {
+      "name": "menu_bar",
+      "title": "Todo List",
+      "description": "See your Todos at a glance",
+      "mode": "menu-bar"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "completed",
+      "type": "dropdown",
+      "required": false,
+      "title": "Completed tasks in Menu Bar",
+      "description": "Show only 3 latest completed tasks, or show/hide all.",
+      "default": "hide_all",
+      "data": [
+        {
+          "title": "Show Latest",
+          "value": "latest"
+        },
+        {
+          "title": "Show All",
+          "value": "show_all"
+        },
+        {
+          "title": "Hide All",
+          "value": "hide_all"
+        }
+      ]
+    },
+    {
+      "name": "sortOrder",
+      "type": "dropdown",
+      "required": false,
+      "title": "Task sorting",
+      "description": "The order in which task are sorted.",
+      "default": "creation_date_ascending",
+      "data": [
+        {
+          "title": "Creation Date (ascending)",
+          "value": "creation_date_ascending"
+        },
+        {
+          "title": "Creation Date (descending)",
+          "value": "creation_date_descending"
+        },
+        {
+          "title": "Title (ascending)",
+          "value": "title_ascending"
+        },
+        {
+          "title": "Title (descending)",
+          "value": "title_descending"
+        }
+      ]
+    },
+    {
+      "name": "nlpParsing",
+      "type": "checkbox",
+      "required": false,
+      "title": "Natural language parsing",
+      "description": "Automatically parse dates and tags",
+      "default": false,
+      "label": "Automatically parse dates and tags"
+    }
+  ]
+}
